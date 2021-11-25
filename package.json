@@ -1,0 +1,26 @@
+{
+  "name": "week-13-homework",
+  "version": "1.0.0",
+  "description": "## Your Task",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thomas21119/TechBlog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thomas21119/TechBlog/issues"
+  },
+  "homepage": "https://github.com/Thomas21119/TechBlog#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.1",
+    "express-session": "^1.17.2",
+    "path": "^0.12.7"
+  }
+}
