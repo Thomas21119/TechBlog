@@ -26,3 +26,5 @@ clone the repository using either ssh keys (git@github.com:Thomas21119/TechBlog.
 <a href="https://github.com/Thomas21119/TechBlog"> Github Repo </a>
 <br>
 <a href="https://tech-blogandsomerandomstring.herokuapp.com/"> Heroku Live Website </a>
+
+![Screenshot](https://github.com/Thomas21119/TechBlog/blob/main/Assets/dashboard.png?raw=true)
