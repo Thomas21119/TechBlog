@@ -1,8 +1,3 @@
-html,
-body {
-  height: 100%;
-}
-
 header {
   width: 100%;
   background-color: royalblue;
@@ -10,7 +5,14 @@ header {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 5%;
+  height: 20%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: seagreen;
+  height: 80%;
 }
 
 header div {
@@ -29,8 +31,11 @@ nav {
   display: flex;
   flex-direction: column;
   background-color: seagreen;
-  padding: 2%;
   height: 60%;
+  width: 80%;
+  margin: 0 auto;
+  border: 3px solid black;
+  margin-top: 5%;
 }
 
 .card-header {
