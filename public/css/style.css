@@ -64,6 +64,7 @@ nav {
   justify-content: space-between;
   height: 20%;
   align-items: center;
+  font-size: 24px;
 }
 
 .card-header .link {
