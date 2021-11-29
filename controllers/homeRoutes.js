@@ -1,4 +1,3 @@
-const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const router = require('express').Router();
 router.get('/', (req, res) => {
@@ -13,12 +12,14 @@ router.get('/', (req, res) => {
           attributes: ['username'],
         },
       },
+      {
+        model: User,
+        attributes: ['username'],
+      },
     ],
   })
     .then((dbPostData) => {
-      const posts = dbPostData.map((post) => {
-        post.get({ plain: true });
-      });
+      const posts = dbPostData.map((post) => post.get({ plain: true }));
       res.render('homepage', { posts, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
@@ -49,12 +50,10 @@ router.get('/post/:id', (req, res) => {
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: [
-          {
-            model: User,
-            attributes: ['username'],
-          },
-        ],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
       },
       {
         model: User,
@@ -64,7 +63,7 @@ router.get('/post/:id', (req, res) => {
   })
     .then((dbPostData) => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'Cannot find a post with this ID' });
+        res.status(404).json({ message: 'No post found with this id' });
         return;
       }
       const post = dbPostData.get({ plain: true });
@@ -76,8 +75,7 @@ router.get('/post/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-router.get('/postComments', (req, res) => {
+router.get('/postsComments', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
@@ -100,11 +98,12 @@ router.get('/postComments', (req, res) => {
   })
     .then((dbPostData) => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'could not find a post with this id' });
+        res.status(404).json({ message: 'No post found with this id' });
         return;
       }
       const post = dbPostData.get({ plain: true });
-      res.render('postComments', { post, loggedIn: req.session.loggedIn });
+
+      res.render('postsComments', { post, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);

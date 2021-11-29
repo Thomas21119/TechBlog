@@ -1,11 +1,29 @@
 <div class='card'>
-  <h3>Login</h3>
-  <form id='loginForm'>
-    <input id='loginUserName' type='text' placeholder='username' />
-    <input id='loginPassword' type='password' placeholder='password' />
-    <button type='submit'>Login</button>
-    <a href='/signup.handlebars'> Or Sign Up Here </a>
+  <h3 class='card-header'>Login</h3>
+  <form id='login-form' class='card-body'>
+    <div>
+      <label class='form-label' for='username-login'>Username</label>
+      <input
+        id='username-login'
+        type='text'
+        autofocus='true'
+        class='form-input'
+      />
+    </div>
+    <div>
+      <label class='form-label' for='password-login'>Password</label>
+      <input
+        id='password-login'
+        type='password'
+        autofocus='true'
+        class='form-input'
+      />
+    </div>
+    <div class='submit'>
+      <button type='submit' class='btn'>Login!</button>
+      <a class='login-link' href='/signup'>Sign up instead</a>
+    </div>
   </form>
 </div>
 
-<script src='../public/javascript/login.js'></script>
+<script src='/javascript/login.js'></script>
